@@ -1,0 +1,32 @@
+# Server
+server:
+  port: 8085
+
+# Spring Devtools
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  thymeleaf:
+    cache: false
+
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/Ideaprojects/springboot_jpa/jpashop
+    username: sa
+    password: 1234
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+# sysout으로 출력되는 구문. 운영환경에서는 이렇게 하면 안 됨       show_sql: true
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
