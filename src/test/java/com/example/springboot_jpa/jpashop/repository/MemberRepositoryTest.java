@@ -18,13 +18,18 @@ public class MemberRepositoryTest {
 
     @Autowired
     MemberRepository memberRepository;
+
+    /** Entity Manager를 통한 모든 데이터 변경은 항상 Transactional안에서 이루어져야한다
+     * Transactional은 반복적인 테스트를 위해 테스트코드에서는 데이터를 기본적으로 롤백함. 롤백을 막으려면 false설정
+     * @throws Exception
+     */
     @Test
     @Transactional
     @Rollback(value = false)
     public void testMember() throws Exception {
         //given
         Member member = new Member();
-        member.setUsername("memberA");
+        member.setUsername("memberB");
 
         //when
         Long saveId = memberRepository.save(member);

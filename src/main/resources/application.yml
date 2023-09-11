@@ -13,9 +13,9 @@ spring:
     cache: false
 
   datasource:
-    url: jdbc:h2:tcp://localhost/~/Ideaprojects/springboot_jpa/jpashop
+    url: jdbc:h2:tcp://localhost/~/jpashop
     username: sa
-    password: 1234
+    password:
     driver-class-name: org.h2.Driver
 
   jpa:
