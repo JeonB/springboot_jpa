@@ -13,18 +13,20 @@ spring:
     cache: false
 
   datasource:
-    url: jdbc:oracle:thin:@localhost:1521:xe
-    username: scott
-    password: rotoakfn33@
-    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:postgresql://localhost:5432/tester
+    username: postgres
+#    password: your_postgres_password
+    driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
       ddl-auto: create
     properties:
       hibernate:
-# sysout으로 출력되는 구문. 운영환경에서는 이렇게 하면 안 됨       show_sql: true
+# sysout으로 출력되는 구문. 운영환경에서는 이렇게 하면 안 됨
+        show_sql: true
         format_sql: true
+    database: postgresql
 
 logging:
   level:
